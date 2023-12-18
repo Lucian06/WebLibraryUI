@@ -1,0 +1,12 @@
+.main-table {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.cover-img {
+    width: 45px;
+    margin: 15px;
+}

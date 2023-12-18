@@ -1,0 +1,30 @@
+<p>
+    <mat-toolbar>
+        <span>Web Library</span>
+    </mat-toolbar>
+</p>
+
+<div class="main-table">
+
+    <table mat-table [dataSource]="books" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Title</th>
+            <td mat-cell *matCellDef="let element">{{element.title}}</td>
+        </ng-container>
+        <ng-container matColumnDef="cover">
+            <th mat-header-cell *matHeaderCellDef>Cover</th>
+            <td mat-cell *matCellDef="let element"> <img class="cover-img" src="{{'data:image/jpg;base64,' + element.cover}}" /></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="goToItems(row)"
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+    </table>
+</div>
